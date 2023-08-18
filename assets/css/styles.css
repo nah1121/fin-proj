@@ -9,8 +9,24 @@
     --t-white: #e6e6e6;
     --p-gold: #d8c691;
     --g-gold: linear-gradient(to right, rgb(184, 135, 70) 0%, rgb(253, 245, 166) 100%);
+    --g-blue: linear-gradient(90deg, hsla(239, 94%, 14%, 1) 0%, hsla(190, 68%, 50%, 1) 100%);
+    
     --darkreader-inline-bgimage:linear-gradient(to right, #936c38 0%, #4d4602 100%);
     --darkreader-inline-bgcolor: initial;
+}
+
+.g-grad{
+    background: var(--g-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.b-grad{
+    background: var(--g-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 @media(max-width: 768px){
@@ -20,9 +36,7 @@
         }
 }
 
-html{
-    height: 50000px;
-}
+
 
 .navbar-brand{
     background-color: var(--s-blue);
@@ -46,4 +60,54 @@ html{
     margin-bottom: 5px;
     width: 60px;
     height: 60px;
+}
+  
+  #container3D canvas {
+    display: flex;
+    width: 400px !important;
+    height: 800px !important;
+    position: relative;
+    margin-top: 10% !important;
+    margin-bottom: -300px;
+    margin-left: 60%;
+  }
+
+.holt{
+    text-align: center;
+}
+
+.ho1i{
+    /* box shadow */
+    box-shadow: 0 0 10px 1px #000000;
+}
+
+.btnh{
+    background-color: var(--p-blue);
+    color: var(--p-white);
+    border: 1px solid var(--s-black);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 10px #000000;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes onHoverAnimation {
+    0% {
+        background-color: var(--p-blue); 
+    }
+    100% {
+        background: var(--g-gold);
+        color: var(--s-black);
+        
+    }
+}
+
+.btnh:hover{
+    animation-name: onHoverAnimation;
 }
