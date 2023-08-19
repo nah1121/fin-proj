@@ -1,4 +1,4 @@
-:root{
+:root {
     --p-black: #000000;
     --s-black: #111111;
     --p-blue: #485d95;
@@ -10,9 +10,11 @@
     --p-gold: #d8c691;
     --g-gold: linear-gradient(to right, rgb(184, 135, 70) 0%, rgb(253, 245, 166) 100%);
     --g-blue: linear-gradient(90deg, hsla(239, 94%, 14%, 1) 0%, hsla(190, 68%, 50%, 1) 100%);
-    
-    --darkreader-inline-bgimage:linear-gradient(to right, #936c38 0%, #4d4602 100%);
-    --darkreader-inline-bgcolor: initial;
+  }
+
+body, nav{
+      background: var(--s-white);
+      color: var(--p-black);
 }
 
 .g-grad{
@@ -34,7 +36,7 @@
         display: none;
         position: relative;
         }
-}
+    }
 
 
 
@@ -110,4 +112,109 @@
 
 .btnh:hover{
     animation-name: onHoverAnimation;
+}
+
+  
+  .header-text {
+    animation: slide-up 1s ease-in-out;
+  }
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .custom-bg-blue {
+    background: var(--g-blue);
+    color: var(--p-white);
+  }
+  
+  .custom-bg-gold {
+    background: var(--g-gold);
+    color: var(--p-black);
+  }
+
+  .cph0{
+    grid-gap: 20px;
+    justify-content: center;
+
+  }
+
+
+
+  .cph{
+    padding-top: 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow:  -22px 22px 62px #5a5a5a,
+             22px -22px 62px #ffffff;
+
+  }
+
+
+
+/* slider */
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
 }
