@@ -83,7 +83,9 @@ body, nav{
     box-shadow: 0 0 10px 1px #000000;
 }
 
+
 .btnh{
+    display: flex;
     background-color: var(--p-blue);
     color: var(--p-white);
     border: 1px solid var(--s-black);
@@ -96,6 +98,12 @@ body, nav{
     text-shadow: 0 0 10px #000000;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
     
 }
 
@@ -254,3 +262,24 @@ body, nav{
     }
     
   }
+
+
+.proj{
+  margin: 20px;
+}
+
+.proj-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: auto;
+  background: var(--g-gold);
+  border-radius: 52px;
+  box-shadow:  -22px 22px 62px #5a5a5a,
+            22px -22px 62px #ffffff;
+}

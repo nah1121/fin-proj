@@ -1,25 +1,14 @@
 <?php
 
-$connectionUrl = getenv("postgres://default:d21ojFXVbAah@ep-rough-union-44345254-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb");
-$username = getenv("default");
-$password = getenv("d21ojFXVbAah");
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "fin";
 
-try {
-   
+    $conn = new mysqli($hostname, $username, $password, $dbname);
 
-    // Extract host, port, and dbname from the parsed URL
-    $host = "ep-rough-union-44345254-pooler.us-east-1.postgres.vercel-storage.com";
-    $port = "5432";
-    $dbname = "verceldb";
+    if ($conn->connect_error) {
+        die("Connection failed: ". $conn->connect_error);
+    }  
 
-    // Build the DSN for PDO
-    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
-
-    // Establish the PDO connection
-    $conn = new PDO($dsn, $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully!";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
     ?>

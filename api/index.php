@@ -206,46 +206,56 @@ require_once("config/config.php");
         <!-- projects preview containers -->
       
         <section id="{{$project->id}}" data-aos="fade-up"  >
+            <div class="proj-cont">
            <?php
         
             $sql = "SELECT * FROM projects";
             $result = $conn->query($sql);
-            $rowsProd = $resultProd->fetch_assoc();
+            $rowsProd = $result->fetch_assoc();
 
-            $id = $rowsProd['projId'];
-            $title = $rowsProd['projTitle'];
-            $price = $rowsProd['projPrice'];
-            $image = $rowsProd['projImg'];
-            $start_date = $rowsProd['sdate'];
-            $finish_date = $rowsProd['dfin'];
-            $description = $rowsProd['projDes'];
-
+            
             $filepath = "..assets/img/products/";
             
-            if ($result) {
-                foreach ($result as $row) {
+            $i = 0;
+
+            
+            
+            if ($result-> num_rows > 0) {
+                do {
+                    $id = $rowsProd['projid'];
+                    $title = $rowsProd['projtitle'];
+                    $budget = $rowsProd['projbudget'];
+                    $image = $rowsProd['projimg'];
+                    $startdate = $rowsProd['dstart'];
+                    $plannedfinishdate = $rowsProd['pdfinish'];
+                    $actualfinishdate = $rowsProd['dfinished'];
+                    $description = $rowsProd['projdesk'];
+                    $i++;
                    echo " 
-                    <div class='container'>
-                        <div class='row'>
-                            <div class='col-lg-6'>
-                                <h2 class='header-text'>$title</h2>
-                                <p class='lead'>$description</p>
-                                <a href='#' class='my-3 col-12 btnh'>
-                                    <h4>View Project</h4>
-                                </a>
-                            </div>
-                            <div class='col-lg-6'>
-                                <img src='.$filepath.+.$image.' alt='' class='img-fluid'>
-                            </div>
-                        </div>
-                    </div>";
+                   <div class='card proj' style='width: 18rem;'>
+                   <img src='".$image."' class='card-img-top' alt='project image' width='300px'>
+                   <div class='card-body'>
+                     <h5 class='card-title' style='text-decoration: underline;'>".$title."</h5>
+                     <p class='card-text'>".$description."</p>
+                     <h5><strong>Budget: ".$budget."</strong></h5>
+                     <a href='#' class='btnh' style='width: 100px; text-align: center; justify-content: center;'>View</a>
+                   </div>
+                 </div>";
+                 if ($i < 4){
+                    continue;
+                 }
+                else{
+                    break;
                 }
-            } else {
-                echo "Query failed!";
+                } while ($rowsProd = $result->fetch_assoc());
             }
+            
+            else {
+                echo "Query failed!";
+            } 
 
             ?>
-
+            </div>
 
         </section>
         
