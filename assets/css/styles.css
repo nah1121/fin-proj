@@ -115,47 +115,48 @@ body, nav{
 }
 
   
-  .header-text {
-    animation: slide-up 1s ease-in-out;
+.header-text {
+  animation: slide-up 1s ease-in-out;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
   }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.custom-bg-blue {
+  background: var(--g-blue);
+  color: var(--p-white);
+}
+
+.custom-bg-gold {
+  background: var(--g-gold);
+  color: var(--p-black);
+}
+
+.cph0{
+  grid-gap: 20px;
+  justify-content: center;
   
-  @keyframes slide-up {
-    0% {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .custom-bg-blue {
-    background: var(--g-blue);
-    color: var(--p-white);
-  }
-  
-  .custom-bg-gold {
-    background: var(--g-gold);
-    color: var(--p-black);
-  }
-
-  .cph0{
-    grid-gap: 20px;
-    justify-content: center;
-
-  }
+}
 
 
 
-  .cph{
-    padding-top: 20px;
-    border: none;
-    border-radius: 20px;
-    box-shadow:  -22px 22px 62px #5a5a5a,
-             22px -22px 62px #ffffff;
+.cph{
+  max-width: 350px;
+  padding-top: 20px;
+  border: none;
+  border-radius: 20px;
+  box-shadow:  -22px 22px 62px #5a5a5a,
+            22px -22px 62px #ffffff;
 
-  }
+}
 
 
 
@@ -163,9 +164,18 @@ body, nav{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%;
+  display: flex;
   position: relative;
-  margin: auto;
+  margin: 0 auto;
+  min-width: 700px;
+  height: auto;
+  background: var(--g-gold);
+  border-radius: 52px;
+}
+
+.mySlides img{
+ border-radius: 50px;
 }
 
 /* Caption text */
@@ -188,17 +198,6 @@ body, nav{
   top: 0;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
 .active {
   background-color: #717171;
 }
@@ -218,3 +217,40 @@ body, nav{
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
+
+.slogan{
+  margin-top: 50px;
+   
+}
+
+.slogan {
+    text-align: center;
+  }
+  .slogan strong {
+    color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  background: var(--g-gold);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+  animation-duration: calc(500);
+  display: inline-block;
+  }
+  
+  @keyframes textclip {
+    0% {
+      background-position: 500% center;
+    }
+    100% {
+      background-position: 80% center;
+    }
+    
+  }

@@ -1,3 +1,12 @@
+<?php
+
+
+require_once("config/config.php");
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -189,7 +198,7 @@
                     </div>
 
                 </div>
-
+                
                 <div class="slogan"><h1>We Fulfill Our Promises with <strong>Precision</strong> and <strong>Excellence</strong></h1></div>
             </div>            
             
@@ -197,6 +206,53 @@
         
           
 
+        <!-- projects preview containers -->
+      
+        <section id="{{$project->id}}" data-aos="fade-up"  >
+           <?php
+        
+            $sql = "SELECT * FROM projects";
+            $result = $conn->query($sql);
+            $rowsProd = $resultProd->fetch_assoc();
+
+            $id = $rowsProd['projId'];
+            $title = $rowsProd['projTitle'];
+            $price = $rowsProd['projPrice'];
+            $image = $rowsProd['projImg'];
+            $start_date = $rowsProd['sdate'];
+            $finish_date = $rowsProd['dfin'];
+            $description = $rowsProd['projDes'];
+
+            $filepath = "..assets/img/products/";
+            
+            if ($result) {
+                foreach ($result as $row) {
+                   echo " 
+                    <div class='container'>
+                        <div class='row'>
+                            <div class='col-lg-6'>
+                                <h2 class='header-text'>$title</h2>
+                                <p class='lead'>$description</p>
+                                <a href='#' class='my-3 col-12 btnh'>
+                                    <h4>View Project</h4>
+                                </a>
+                            </div>
+                            <div class='col-lg-6'>
+                                <img src='.$filepath.+.$image.' alt='' class='img-fluid'>
+                            </div>
+                        </div>
+                    </div>";
+                }
+            } else {
+                echo "Query failed!";
+            }
+
+            ?>
+
+
+        </section>
+        
+        <!-- end of projects preview containers -->
         
           
 
@@ -248,3 +304,5 @@
 </body>
 
 </html>
+
+
