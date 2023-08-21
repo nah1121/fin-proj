@@ -3,6 +3,7 @@
 
 require_once("config/config.php");
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -200,12 +201,70 @@ require_once("config/config.php");
             </div>            
             
         </div>
+
+
+
+        <section class="teams-section">
+        <h2>Our Teams</h2>
         
-          
+        
+        <!-- Add more teams as needed -->
+    </section>
+    
+    <?php
+
+
+        $i = ['Construction Manager',
+        'Project Manager',
+        'Project Coordinator',
+        'Interior Designer'];
+
+        foreach($i as $obj) {
+        $tea = "SELECT * FROM teams WHERE `teams`.`roles` = ?";
+        $stmt = $conn->prepare($tea);
+
+        if ($stmt) {
+        $stmt->bind_param("s", $obj);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $id = $row['id'];
+            $img = $row['image'];
+            $name = $row['name'];
+            $bio = $row['bio'];
+
+            echo "
+            <div class='team'>
+                <img src='assets/img/".$img."' alt='".$id."' width='200px'>
+                <h3>".$name."</h3>
+                <p>".$bio."</p>
+            </div>";
+        }
+
+        $stmt->close();
+        } else {
+        // Handle the case where the statement preparation fails
+        }
+
+        }
+
+
+
+
+
+
+
+
+        ?>
+
+
+
+        
+
 
         <!-- projects preview containers -->
-      
-        <section id="{{$project->id}}" data-aos="fade-up"  >
+      <div class="contp">
             <div class="proj-cont">
            <?php
         
@@ -214,7 +273,7 @@ require_once("config/config.php");
             $rowsProd = $result->fetch_assoc();
 
             
-            $filepath = "..assets/img/products/";
+           
             
             $i = 0;
 
@@ -231,14 +290,15 @@ require_once("config/config.php");
                     $actualfinishdate = $rowsProd['dfinished'];
                     $description = $rowsProd['projdesk'];
                     $i++;
+
                    echo " 
-                   <div class='card proj' style='width: 18rem;'>
+                   <div class='card proj' style='width: 18rem; margin-top: 50px;'>
                    <img src='".$image."' class='card-img-top' alt='project image' width='300px'>
                    <div class='card-body'>
                      <h5 class='card-title' style='text-decoration: underline;'>".$title."</h5>
                      <p class='card-text'>".$description."</p>
                      <h5><strong>Budget: ".$budget."</strong></h5>
-                     <a href='#' class='btnh' style='width: 100px; text-align: center; justify-content: center;'>View</a>
+                     <a href='#' id=".$id." class='btnh' style='width: 100px; text-align: center; justify-content: center;'>View</a>
                    </div>
                  </div>";
                  if ($i < 4){
@@ -255,9 +315,12 @@ require_once("config/config.php");
             } 
 
             ?>
-            </div>
 
-        </section>
+
+            </div>
+            <div class="row btna"><a href='#' id="" class='btnh' style='width: 250px; justify-content: center;'>More Projects</a></div>
+      </div>
+        
         
         <!-- end of projects preview containers -->
         
@@ -308,6 +371,9 @@ require_once("config/config.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+
+
+        
 </body>
 
 </html>

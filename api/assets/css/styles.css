@@ -274,12 +274,57 @@ body, nav{
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 100%;
+  margin: 20px auto;
+}
+
+.contp{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: var(--g-blue);
+
+}
+
+.proj {
+  width: 18rem;
+  transition: opacity 0.3s ease; /* Adding a transition for smooth effect */
+}
+
+.proj:hover {
+  opacity: 1; /* Set the opacity of the hovered element back to 1 */
+  
+}
+
+.proj-cont:hover .proj:not(:hover) {
+  opacity: 0.5; /* Set the opacity of other non-hovered elements to 0.5 */
+}
+
+.btna{
+  margin-bottom: 30px;
+}
+
+
+
+.teams-section {
+  text-align: center;
+  padding: 40px;
+}
+
+.team {
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+}
+
+.team img {
+  max-width: 100%;
   height: auto;
-  background: var(--g-gold);
-  border-radius: 52px;
-  box-shadow:  -22px 22px 62px #5a5a5a,
-            22px -22px 62px #ffffff;
+}
+
+.team h3 {
+  margin: 10px 0;
+}
+
+.team p {
+  font-size: 14px;
 }
