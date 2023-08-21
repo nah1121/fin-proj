@@ -204,50 +204,70 @@ require_once("config/config.php");
 
 
 
-        <section class="teams-section">
-        <h2>Our Teams</h2>
+        <div class="teams-section mx-auto" style="max-width: 1500px;">
+        <h2>Our Team</h2>
+        
+        <div class="main-cont">
         
         
-        <!-- Add more teams as needed -->
-    </section>
     
-    <?php
+    
+            <?php
 
 
-        $i = ['Construction Manager',
-        'Project Manager',
-        'Project Coordinator',
-        'Interior Designer'];
+                $i = ['Construction Manager',
+                'Project Manager',
+                'Project Coordinator'];
 
-        foreach($i as $obj) {
-        $tea = "SELECT * FROM teams WHERE `teams`.`roles` = ?";
-        $stmt = $conn->prepare($tea);
+                $j = 0;
+                foreach($i as $obj) {
+                $tea = "SELECT * FROM teams WHERE `teams`.`roles` = ?";
+                $stmt = $conn->prepare($tea);
 
-        if ($stmt) {
-        $stmt->bind_param("s", $obj);
-        $stmt->execute();
+                if ($stmt) {
+                $stmt->bind_param("s", $obj);
+                $stmt->execute();
 
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            $id = $row['id'];
-            $img = $row['image'];
-            $name = $row['name'];
-            $bio = $row['bio'];
+                $result = $stmt->get_result();
 
-            echo "
-            <div class='team'>
-                <img src='assets/img/".$img."' alt='".$id."' width='200px'>
-                <h3>".$name."</h3>
-                <p>".$bio."</p>
-            </div>";
-        }
+                $ho = '';
+                $ho1 = '';
+                while ($row = $result->fetch_assoc()) {
+                    
+                    $id = $row['id'];
+                    $img = $row['image'];
+                    $name = $row['name'];
+                    $bio = $row['bio'];
+                    
+                    $j = 1 + $j;
 
-        $stmt->close();
-        } else {
-        // Handle the case where the statement preparation fails
-        }
+                    if($j % 2 == 0){
+                        $ho = 'flex-row-reverse';
+                        $ho1 = 'text-align: right; margin-right: 25px;';
+                    }
+                    else{
+                        $ho = 'flex-row';
+                        $ho1 = 'text-align: left; margin-left: 25px;';
+                    }
 
-        }
+                    
+
+                    echo "
+                    
+                    <div class='teams d-flex ".$ho."'>
+                        <img src='https://via.placeholder.com/500x500.png?text=person' alt='".$id."' width='200px'>
+                        <div class='d-flex flex-column' style='".$ho1." max-width: 700px;'><h3>".$name."</h3>
+                        <h5>".$obj."</h5>
+                        <p>".$bio."</p></div>
+                    </div>";
+                }
+
+                $stmt->close();
+                } else {
+                // Handle the case where the statement preparation fails
+                }
+
+                }
 
 
 
@@ -256,15 +276,22 @@ require_once("config/config.php");
 
 
 
-        ?>
 
 
+                ?>
+
+    <div class="mx-auto btna"><a href='#' id="" class='btnh' style='width: 250px; justify-content: center;'>More</a></div>
+
+        </div>
+
+
+            </div>
 
         
 
 
         <!-- projects preview containers -->
-      <div class="contp">
+      <div class="contp d-flex flex-column mx-auto" style="max-width: 1500px;">
             <div class="proj-cont">
            <?php
         
@@ -291,8 +318,16 @@ require_once("config/config.php");
                     $description = $rowsProd['projdesk'];
                     $i++;
 
+                    if ($i == 3 or $i == 4)
+                       {
+                           $cl = "d-none d-md-flex fles-column";
+                       }
+                       else
+                       {
+                           $cl = '';
+                       }
                    echo " 
-                   <div class='card proj' style='width: 18rem; margin-top: 50px;'>
+                   <div class='card proj ".$cl."' style='width: 18rem; margin-top: 50px;'>
                    <img src='".$image."' class='card-img-top' alt='project image' width='300px'>
                    <div class='card-body'>
                      <h5 class='card-title' style='text-decoration: underline;'>".$title."</h5>
@@ -301,6 +336,9 @@ require_once("config/config.php");
                      <a href='#' id=".$id." class='btnh' style='width: 100px; text-align: center; justify-content: center;'>View</a>
                    </div>
                  </div>";
+                
+
+
                  if ($i < 4){
                     continue;
                  }
@@ -317,8 +355,8 @@ require_once("config/config.php");
             ?>
 
 
-            </div>
-            <div class="row btna"><a href='#' id="" class='btnh' style='width: 250px; justify-content: center;'>More Projects</a></div>
+                </div>
+            <div class="mx-auto btna"><a href='#' id="" class='btnh' style='width: 250px; justify-content: center;'>More Projects</a></div>
       </div>
         
         

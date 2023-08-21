@@ -308,23 +308,30 @@ body, nav{
 .teams-section {
   text-align: center;
   padding: 40px;
+  border-top: solid 1px rgb(198, 198, 198);
+  border-bottom: solid 1px rgb(198, 198, 198);
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
-.team {
+.teams {
   display: inline-block;
   margin: 20px;
-  text-align: center;
 }
 
-.team img {
-  max-width: 100%;
-  height: auto;
+.teams img {
+  max-width: 20%;
+  max-height: 20%;
+  height: 20%;
+  width: 20%;
+ 
 }
 
-.team h3 {
+.teams h3 {
   margin: 10px 0;
 }
 
-.team p {
+.teams p {
   font-size: 14px;
 }
+
