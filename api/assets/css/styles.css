@@ -335,3 +335,14 @@ body, nav{
   font-size: 14px;
 }
 
+footer{
+  background-color: #717171;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow:  -22px 22px 62px #5a5a5a,
+            22px -22px 62px #ffffff;
+}
