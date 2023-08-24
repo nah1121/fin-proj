@@ -1,24 +1,13 @@
 .share {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     gap: 1em;
     transition: .4s ease-in-out;
-    margin-top: 60px;
     margin-left: 50px;
-  }
+}
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .btn1 {
+.btn1 {
     outline: none;
     transition: .4s ease-in-out;
     width: 45px;
@@ -33,19 +22,22 @@
     /* overflow: hidden; */
     border-radius: 7px;
     cursor: pointer;
-  }
-  
-  .btn1 .instagram {
+}
+
+.btn1 .instagram {
     margin-top: 0.1em;
     fill: #fafafa;
-  }
-  
-  .btn1 .tooltiptext1 {
+}
+
+.btn1 .tooltiptext1 {
     visibility: hidden;
     width: 6em;
     height: 8em;
-    background-color: whitesmoke;
-    color: black;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    color: rgb(255, 255, 255);
     text-align: center;
     border-radius: 10px;
     padding: 1em;
@@ -54,38 +46,38 @@
     top: -8em;
     z-index: 1;
     transition: .1s ease-in-out;
-  }
-  
-  .btn1 .tooltiptext1 .card {
+}
+
+.btn1 .tooltiptext1 .cds {
     width: 4em;
     height: 4em;
-    background-color: white;
-  }
-  
-  .btn1 .tooltiptext1 .account {
+    background-color: #f09433;
+}
+
+.btn1 .tooltiptext1 .account {
     margin-top: 1em;
-  }
-  
-  .btn1 .tooltiptext1 .username {
+}
+
+.btn1 .tooltiptext1 .username {
     font-size: 0.7em;
     margin-top: 1.6em;
     font-weight: bold;
-  }
-  
-  .btn1:hover .tooltiptext1 {
+}
+
+.btn1:hover .tooltiptext1 {
     transform: translateY(-1em);
     visibility: visible;
-  }
-  
-  .btn1:hover {
-    background-color: transparent;
-  }
-  
-  .btn1:hover .instagram {
+}
+
+.btn1:hover {
+  b ackground-color: transparent;
+}
+
+.btn1:hover .instagram {
     fill: black;
-  }
-  
-  .svgContainer {
+}
+
+.svgContainer {
     width: 45px;
     height: 45px;
     display: flex;
@@ -98,9 +90,9 @@
     border-radius: 10px;
     transition: all .3s;
     border: 1px solid rgba(156, 156, 156, 0.466);
-  }
-  
-  .BG1 {
+}
+
+.BG1 {
     display: flex;
     position: absolute;
     padding: 0;
@@ -115,37 +107,19 @@
     border-radius: 9px;
     pointer-events: none;
     transition: all .3s;
-  }
-  
-  .btn1:hover .BG1 {
+}
+
+.btn1:hover .BG1 {
     transform: rotate(35deg);
     transform-origin: bottom;
-  }
-  
-  .btn1:hover .svgContainer {
+}
+
+.btn1:hover .svgContainer {
     background-color: rgba(156, 156, 156, 0.466);
-  }
-  
-  
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  .btn2 {
+.btn2 {
     outline: none;
     transition: .4s all;
     width: 45px;
@@ -161,14 +135,14 @@
     border-radius: 7px;
     cursor: pointer;
 }
-  
-  .btn2 .twitter {
+
+.btn2 .twitter {
     margin-top: .25em;
     margin-left: .1em;
     fill: #ffffff;
-  }
-  
-  .btn2 .tooltiptext2 {
+}
+
+.btn2 .tooltiptext2 {
     visibility: hidden;
     width: 6em;
     height: 8em;
@@ -182,35 +156,35 @@
     top: -8em;
     z-index: 1;
     transition: .1s ease-in-out;
-  }
-  
-  .btn2 .tooltiptext2 .card {
+}
+
+.btn2 .tooltiptext2 .cds {
     width: 4em;
     height: 4em;
     background-color: white;
-  }
-  
-  .btn2 .tooltiptext2 .account {
+}
+
+.btn2 .tooltiptext2 .account {
     margin-top: 1em;
-  }
-  
-  .btn2 .tooltiptext2 .username {
+}
+
+.btn2 .tooltiptext2 .username {
     font-size: 0.6em;
     margin-top: 1.6em;
     font-weight: bold;
-  }
-  
-  .btn2:hover .tooltiptext2 {
+}
+
+.btn2:hover .tooltiptext2 {
     transform: translateY(-1em);
     visibility: visible;
-  }
-  
- 
-  .btn2:hover .twitter {
+}
+
+
+.btn2:hover .twitter {
     fill: white;
-  }
-  
-  .svgContainer {
+}
+
+.svgContainer {
     width: 45px;
     height: 45px;
     display: flex;
@@ -223,9 +197,9 @@
     border-radius: 10px;
     transition: all .3s;
     border: 1px solid rgba(156, 156, 156, 0.466);
-  }
-  
-  .BG2 {
+}
+
+.BG2 {
     display: flex;
     position: absolute;
     padding: 0;
@@ -236,27 +210,19 @@
     border-radius: 9px;
     pointer-events: none;
     transition: all .3s;
-  }
-  
-  .btn2:hover .BG2 {
+}
+
+.btn2:hover .BG2 {
     transform: rotate(35deg);
     transform-origin: bottom;
-  }
-  
-  .btn2:hover .svgContainer {
+}
+
+.btn2:hover .svgContainer {
     background-color: rgba(156, 156, 156, 0.466);
-  }
-  
+}
 
 
-
-
-
-
-
-  
-  
-  .btn3 {
+.btn3 {
     outline: none;
     transition: .4s all;
     width: 45px;
@@ -272,8 +238,8 @@
     border-radius: 7px;
     cursor: pointer;
 }
-  
-  .btn3 .tooltiptext3 {
+
+.btn3 .tooltiptext3 {
     visibility: hidden;
     width: 6em;
     height: 8em;
@@ -287,41 +253,36 @@
     top: -8em;
     z-index: 1;
     transition: .1s ease-in-out;
-  }
-  
-  .btn3 .tooltiptext3 .card {
+}
+
+.btn3 .tooltiptext3 .cds {
     width: 4em;
     height: 4em;
     background-color: white;
-  }
-  
-  .btn3 .tooltiptext3 .account {
+}
+
+.btn3 .tooltiptext3 .account {
     margin-top: 1em;
-  }
-  
-  .btn3 .tooltiptext3 .username {
+}
+
+.btn3 .tooltiptext3 .username {
     font-size: 0.7em;
     margin-top: 1.6em;
     font-weight: bold;
-  }
-  
-  .btn3:hover .tooltiptext3 {
+}
+
+.btn3:hover .tooltiptext3 {
     transform: translateY(-1em);
     visibility: visible;
-  }
-  
-  
-  
-  .btn3 .git {
+}
+
+.btn3 .git {
     fill: rgb(255, 255, 255);
-  }
-  .btn3:hover .git {
+}
+.btn3:hover .git {
     fill: rgb(0, 0, 0);
-  }
+}
   
-  
-
-
 .svgContainer {
     width: 45px;
     height: 45px;
@@ -339,26 +300,26 @@
   }
 
 .BG3 {
-  position: absolute;
-  content: "";
-  display: flex;
-  padding: 0;
-  width: 45px;
-  height: 45px;
-  background: #000000;
-  z-index: -1;
-  border-radius: 9px;
-  pointer-events: none;
-  transition: all .3s;
+    position: absolute;
+    content: "";
+    display: flex;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    background: #000000;
+    z-index: -1;
+    border-radius: 9px;
+    pointer-events: none;
+    transition: all .3s;
 }
 
 .btn3:hover .BG3 {
-  transform: rotate(35deg);
-  transform-origin: bottom;
+    transform: rotate(35deg);
+    transform-origin: bottom;
 }
 
 .btn3:hover .svgContainer {
-  background-color: rgba(156, 156, 156, 0.466);
+    background-color: rgba(156, 156, 156, 0.466);
 }
 
 
@@ -376,48 +337,48 @@
 
   
 .btn4 {
-    outline: none;
-    transition: .4s all;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-    position: relative;
-    /* overflow: hidden; */
-    border-radius: 7px;
-    cursor: pointer;
+      outline: none;
+      transition: .4s all;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      /* overflow: hidden; */
+      border-radius: 7px;
+      cursor: pointer;
 }
   
   .btn4 .twitter {
-    margin-top: .25em;
-    margin-left: .1em;
-    fill: #ffffff;
+      margin-top: .25em;
+      margin-left: .1em;
+      fill: #ffffff;
   }
   
   .btn4 .tooltiptext4 {
-    visibility: hidden;
-    width: 6em;
-    height: 8em;
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-    border-radius: 10px;
-    padding: 1em;
-    position: absolute;
-    left: -1.5em;
-    top: -8em;
-    z-index: 1;
-    transition: .1s ease-in-out;
+      visibility: hidden;
+      width: 6em;
+      height: 8em;
+      background-color: whitesmoke;
+      color: black;
+      text-align: center;
+      border-radius: 10px;
+      padding: 1em;
+      position: absolute;
+      left: -1.5em;
+      top: -8em;
+      z-index: 1;
+      transition: .1s ease-in-out;
   }
   
-  .btn4 .tooltiptext4 .card {
-    width: 4em;
-    height: 4em;
-    background-color: white;
+  .btn4 .tooltiptext4 .cds {
+      width: 4em;
+      height: 4em;
+      background-color: white;
   }
   
   .btn4 .tooltiptext4 .account {
@@ -425,14 +386,14 @@
   }
   
   .btn4 .tooltiptext4 .username {
-    font-size: 0.6em;
-    margin-top: 1.6em;
-    font-weight: bold;
+      font-size: 0.6em;
+      margin-top: 1.6em;
+      font-weight: bold;
   }
   
   .btn4:hover .tooltiptext4 {
-    transform: translateY(-1em);
-    visibility: visible;
+      transform: translateY(-1em);
+      visibility: visible;
   }
   
  
@@ -441,36 +402,36 @@
   }
   
   .svgContainer {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    letter-spacing: 0.8px;
-    border-radius: 10px;
-    transition: all .3s;
-    border: 1px solid rgba(156, 156, 156, 0.466);
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.8px;
+      border-radius: 10px;
+      transition: all .3s;
+      border: 1px solid rgba(156, 156, 156, 0.466);
   }
   
   .BG4 {
-    display: flex;
-    position: absolute;
-    padding: 0;
-    width: 45px;
-    height: 45px;
-    background: #03A9F4;
-    z-index: -1;
-    border-radius: 9px;
-    pointer-events: none;
-    transition: all .3s;
+      display: flex;
+      position: absolute;
+      padding: 0;
+      width: 45px;
+      height: 45px;
+      background: #03A9F4;
+      z-index: -1;
+      border-radius: 9px;
+      pointer-events: none;
+      transition: all .3s;
   }
   
   .btn4:hover .BG4 {
-    transform: rotate(35deg);
-    transform-origin: bottom;
+      transform: rotate(35deg);
+      transform-origin: bottom;
   }
   
   .btn4:hover .svgContainer {

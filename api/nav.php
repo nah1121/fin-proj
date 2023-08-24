@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid row">
-            <a class="navbar-brand col-2 position-absolute top-0 start-50 translate-middle-x" href="#">
+            <a class="navbar-brand col-2 position-absolute top-0 start-50 translate-middle-x" href="index.php">
                 <img src="assets/img/logo/svg0.svg" alt="Yebis Engineering" width="250px">
             </a>
             <p class="col"></p>
@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse col" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
@@ -26,7 +26,7 @@
                             More
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" target="_top">Portfolio</a></li>
+                            <li><a class="dropdown-item" href="portfolio.php" target="_top">Portfolio</a></li>
                             <li><a class="dropdown-item" href="#">Reviews</a></li>
                             <li><a class="dropdown-item" href="#">Blog</a></li>
                             <li><a class="dropdown-item" href="#">Career Opportunities</a></li>

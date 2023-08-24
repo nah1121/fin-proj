@@ -287,15 +287,17 @@ body, nav{
 
 .proj {
   width: 18rem;
-  transition: opacity 0.3s ease; /* Adding a transition for smooth effect */
+  transition: 0.3s ease-in-out; /* Adding a transition for smooth effect */
 }
 
 .proj:hover {
+  transform: scale(1.2);
   opacity: 1; /* Set the opacity of the hovered element back to 1 */
-  
+  box-shadow:  0 0 10px 1px #000000; 
 }
 
 .proj-cont:hover .proj:not(:hover) {
+  transform: scale(0.9);
   opacity: 0.5; /* Set the opacity of other non-hovered elements to 0.5 */
 }
 
@@ -336,13 +338,95 @@ body, nav{
 }
 
 footer{
-  background-color: #717171;
   padding: 20px;
-  text-align: center;
   margin-top: 50px;
-  margin-bottom: 50px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow:  -22px 22px 62px #5a5a5a,
             22px -22px 62px #ffffff;
+}
+
+.footcont1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.fot{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  align-content:space-between;
+}
+
+.fot h3{
+  margin-bottom: 20px;
+}
+
+.fot p{
+  margin-bottom: 20px;
+}
+
+.fot a{
+  text-decoration: none;
+  color: var(--p-black);
+}
+
+
+
+.btnh0{
+  display: flex;
+  background-color: var(--p-blue);
+  color: var(--p-white);
+  border: 1px solid var(--s-black);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 10px #000000;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  width: 150px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+@keyframes onHoverAnimation {
+  0% {
+      background-color: var(--p-blue); 
+  }
+  100% {
+      background: var(--g-gold);
+      color: var(--s-black);
+      
+  }
+}
+
+.btnh0:hover{
+  animation-name: onHoverAnimation;
+}
+
+
+.vproj{
+  margin: 20px;
+  margin-top: 0;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--g-blue);
+  box-shadow:  -22px 22px 62px #5a5a5a,
+            22px -22px 62px #ffffff;
+}
+
+.vproj1 img{
+
+  margin: 0 auto;
+  border-radius: 20px;
 }

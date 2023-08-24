@@ -57,7 +57,7 @@
         <div class="ho1i card col-sm col-12 d-flex flex-column mx-sm-2 my-2">
             <h1><strong class="b-grad">50+</strong></h1>
             <h3>Completed projects</h3>
-            <a href="#" class="my-3 col-12 btnh">
+            <a href="portfolio.php" class="my-3 col-12 btnh">
                 <h4>Portfolio</h4>
             </a>
         </div>
@@ -65,7 +65,7 @@
         <div class="ho1i card col-sm col-12 d-flex flex-column mx-sm-2 my-2">
             <h1><strong class="b-grad">120+</strong></h1>
             <h3>Satisfied Clients</h3>
-            <a href="#" class="my-3 col-12 btnh">
+            <a href="reviews.php" class="my-3 col-12 btnh">
                 <h4>Reviews</h4>
             </a>
         </div>
@@ -240,7 +240,7 @@
                     $startdate = $rowsProd['dstart'];
                     $plannedfinishdate = $rowsProd['pdfinish'];
                     $actualfinishdate = $rowsProd['dfinished'];
-                    $description = $rowsProd['projdesk'];
+                    $sdescription = $rowsProd['projsdesk'];
                     $i++;
 
                     if ($i == 3 or $i == 4)
@@ -256,9 +256,9 @@
                    <img src='".$image."' class='card-img-top' alt='project image' width='300px'>
                    <div class='card-body'>
                      <h5 class='card-title' style='text-decoration: underline;'>".$title."</h5>
-                     <p class='card-text'>".$description."</p>
+                     <p class='card-text'>".$sdescription."</p>
                      <h5><strong>Budget: ".$budget."</strong></h5>
-                     <a href='#' id=".$id." class='btnh' style='width: 100px; text-align: center; justify-content: center;'>View</a>
+                     <a href='view.php?id=".$id."' class='btnh' style='width: 100px; text-align: center; justify-content: center;'>View</a>
                    </div>
                  </div>";
                 
@@ -281,7 +281,7 @@
 
 
                 </div>
-            <div class="mx-auto btna"><a href='#' id="" class='btnh' style='width: 250px; justify-content: center;'>More Projects</a></div>
+            <div class="mx-auto btna"><a href='portfolio.php' id="" class='btnh' style='width: 250px; justify-content: center;'>More Projects</a></div>
       </div>
         
         
