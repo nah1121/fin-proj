@@ -121,6 +121,7 @@ if (isset($_GET["id"])) {
 
 <?php
 include("footer.php");
+include("scr.php");
 ?>
 
 

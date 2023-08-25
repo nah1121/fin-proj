@@ -14,6 +14,29 @@ include("nav.php");
 
 
 
+<div class="sorting-options">
+    <label for="sort-key">Sort By:</label>
+    <select id="sort-key" name="sort-key">
+        <option value="name">Name</option>
+        <option value="budget">Budget</option>
+        <option value="time">Time Taken</option>
+    </select>
+    
+    <label for="sort-order">Sort Order:</label>
+    <select id="sort-order" name="sort-order">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+    </select>
+    
+    <button id="sort-button">Sort</button>
+</div>
+
+
+
+
+
+
+
 <?php
 
 
@@ -77,7 +100,6 @@ function sortByTimeTaken($a, $b) {
     return $timeTakenA - $timeTakenB;
 }
 
-
 // Function to convert seconds to years, months, and days
 function secondsToApproximateTime($seconds) {
     $years = floor($seconds / (365 * 24 * 60 * 60));
@@ -109,11 +131,9 @@ function secondsToApproximateTime($seconds) {
 }
 
 
-
-
 // Sorting options
-$sortKey = 'budget'; // You can change this to 'budget' or 'time' for different sorting criteria
-$order = 'asc';    // You can change this to 'desc' for descending order
+$sortKey = isset($_GET['sortKey']) ? $_GET['sortKey'] : 'name';
+$order = isset($_GET['order']) ? $_GET['order'] : 'asc';
 
 // Choose sorting function based on the sortKey
 if ($sortKey === 'name') {
@@ -161,7 +181,7 @@ foreach ($projects as $project) {
         <h5><strong>Budget: ".$budget."</strong></h5>
         <a href='view.php?id=".$id."' class='btnh' style='width: 100px; text-align: center; justify-content: center;'>View</a>
     </div>
-    </div>";
+    </div>";    
 
 
 
@@ -170,6 +190,22 @@ foreach ($projects as $project) {
 ?>
 </div>
       </div>
+
+
+
+<!-- Add JavaScript to handle sorting -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sortButton = document.getElementById("sort-button");
+    sortButton.addEventListener("click", function() {
+        const sortKey = document.getElementById("sort-key").value;
+        const sortOrder = document.getElementById("sort-order").value;
+        
+        // Redirect to the same page with sorting parameters
+        window.location.href = `portfolio.php?sortKey=${sortKey}&order=${sortOrder}`;
+    });
+});
+</script>
 
 
 
