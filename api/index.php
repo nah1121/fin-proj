@@ -1,7 +1,17 @@
 <?php
 
+session_start();
+
+$ids = $_SESSION["id"];
+
+
+echo "dssdddddddddddddddddddddddddddddddddddddddd";
+echo $ids;
 
 require_once("config/config.php");
+
+
+
 
 
 ?>

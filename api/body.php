@@ -1,3 +1,40 @@
+    <?php
+    
+    include_once('config/config.php');
+    if(isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+        
+        $sql = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')";
+        $result = $conn->query($sql);
+        
+        if($result){
+            echo "<script language='javascript'>";
+            echo "alert('Message Sent!')";
+            echo "</script>";
+        }
+        else{
+            echo "<script language='javascript'>";
+            echo "alert('Message Failed!')";
+            echo "</script>";
+        }
+    }
+
+
+
+
+
+
+?>
+    
+    
+    
+    
+    
+    
+    
+    
     <div id="carouselExampleCaptions" class="carousel slide my-5">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -292,18 +329,18 @@
 
 
  
-                <form class="row g-3">
+                <form class="row container g-3">
                     <h1>Wanna get in touch?</h1>
         <div class="col-md-4">
             <label for="validationServer01" class="form-label">First name</label>
-            <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+            <input type="text" class="form-control is-valid" id="validationServer01" value="" required>
             <div class="valid-feedback">
             Looks good!
             </div>
         </div>
         <div class="col-md-4">
             <label for="validationServer02" class="form-label">Last name</label>
-            <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+            <input type="text" class="form-control is-valid" id="validationServer02" value="" required>
             <div class="valid-feedback">
             Looks good!
             </div>
@@ -354,7 +391,7 @@
             </div>
         </div>
         <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="submit" name="submit">Submit form</button>
         </div>
         </form>
 

@@ -2,7 +2,7 @@
 <footer>
 <div class="footconts row">
     <div class="footcont1 col">
-    <img src="assets/img/logo/svg1.svg" alt="Yebis Engineering" width="100px">
+    <img src="assets/img/logo/svg1.svg" id="logosf" alt="Yebis Engineering" width="100px">
     </div>
 
     <div class="footcont2 d-flex flex-column col justify-content-center align-content-center align-items-center">
