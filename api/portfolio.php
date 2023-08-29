@@ -7,6 +7,7 @@ include_once("config/config.php");
 include("head.php");
 
 
+
 include("nav.php");
 
 ?>
@@ -203,7 +204,8 @@ foreach ($projects as $project) {
 
 
 
-<!-- Add JavaScript to handle sorting -->
+<!-- Scripts -->
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const sortButton = document.getElementById("sort-button");
