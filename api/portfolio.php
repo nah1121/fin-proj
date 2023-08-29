@@ -14,22 +14,32 @@ include("nav.php");
 
 
 
-<div class="sorting-options">
-    <label for="sort-key">Sort By:</label>
-    <select id="sort-key" name="sort-key">
-        <option value="name">Name</option>
-        <option value="budget">Budget</option>
-        <option value="time">Time Taken</option>
-    </select>
-    
-    <label for="sort-order">Sort Order:</label>
-    <select id="sort-order" name="sort-order">
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-    </select>
-    
+<section>
+  <div class="sorting-options">
+    <div class="sort_opt0">
+      <label for="sort-key">Sort By:</label>
+      <div class="custom-select-wrapper">
+        <select class="custom-select" id="sort-key" name="sort-key">
+          <option value="name">Name</option>
+          <option value="budget">Budget</option>
+          <option value="time">Time Taken</option>
+        </select>
+      </div>
+    </div>
+    <div class="sort-opt1">
+      <label for="sort-order">Sort Order:</label>
+      <div class="custom-select-wrapper">
+        <select class="custom-select" id="sort-order" name="sort-order">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </div>
+    </div>
     <button id="sort-button">Sort</button>
-</div>
+  </div>
+</section>
+
+
 
 
 
@@ -205,6 +215,126 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = `portfolio.php?sortKey=${sortKey}&order=${sortOrder}`;
     });
 });
+
+
+document.querySelectorAll(".custom-select").forEach(function (select) {
+  var classes = select.getAttribute("class"),
+    id = select.getAttribute("id"),
+    name = select.getAttribute("name");
+  var template = '<div class="' + classes + '">';
+  template +=
+    '<span class="custom-select-trigger">' +
+    select.getAttribute("placeholder") +
+    "</span>";
+  template += '<div class="custom-options">';
+  select.querySelectorAll("option").forEach(function (option) {
+    template +=
+      '<span class="custom-option ' +
+      option.getAttribute("class") +
+      '" data-value="' +
+      option.getAttribute("value") +
+      '">' +
+      option.innerHTML +
+      "</span>";
+  });
+  template += "</div></div>";
+
+  var wrapper = document.createElement("div");
+  wrapper.className = "custom-select-wrapper";
+  select.parentNode.insertBefore(wrapper, select);
+  wrapper.appendChild(select);
+  wrapper.insertAdjacentHTML("afterend", template);
+  select.style.display = "none";
+
+  var options = wrapper.querySelectorAll(".custom-option");
+  options.forEach(function (option) {
+    option.addEventListener("click", function () {
+      var select = wrapper.querySelector("select");
+      select.value = this.getAttribute("data-value");
+
+      options.forEach(function (otherOption) {
+        otherOption.classList.remove("selection");
+      });
+      this.classList.add("selection");
+
+      var customOptions = wrapper.querySelector(".custom-options");
+      if (customOptions) {
+        customOptions.classList.remove("option-hover");
+      }
+
+      var customSelect = wrapper.querySelector(".custom-select");
+      if (customSelect) {
+        customSelect.classList.remove("opened");
+      }
+
+      var customTrigger = wrapper.querySelector(".custom-select-trigger");
+      if (customTrigger) {
+        customTrigger.textContent = this.textContent;
+      }
+    });
+  });
+
+  var firstOption = wrapper.querySelector(".custom-option:first-of-type");
+  if (firstOption) {
+    firstOption.classList.add("selection");
+    var customTrigger = wrapper.querySelector(".custom-select-trigger");
+    if (customTrigger) {
+      customTrigger.textContent = firstOption.textContent;
+    }
+  }
+});
+
+document.querySelectorAll(".custom-option:first-of-type").forEach(function (option) {
+  option.addEventListener("mouseover", function () {
+    var customOptions = this.closest(".custom-options");
+    if (customOptions) {
+      customOptions.classList.add("option-hover");
+    }
+  });
+
+  option.addEventListener("mouseout", function () {
+    var customOptions = this.closest(".custom-options");
+    if (customOptions) {
+      customOptions.classList.remove("option-hover");
+    }
+  });
+});
+
+document.querySelectorAll(".custom-select-trigger").forEach(function (trigger) {
+  trigger.addEventListener("click", function (event) {
+    event.stopPropagation();
+    
+    var customSelect = this.closest(".custom-select");
+    if (customSelect) {
+      document.querySelectorAll(".custom-select.opened").forEach(function (openedSelect) {
+        if (openedSelect !== customSelect) {
+          openedSelect.classList.remove("opened");
+        }
+      });
+      
+      customSelect.classList.toggle("opened");
+      
+      window.addEventListener("click", function () {
+        customSelect.classList.remove("opened");
+      }, { once: true });
+    }
+  });
+});
+
+document.querySelector("#sort-button").addEventListener("click", function () {
+  var sortKeySelect = document.querySelector("#sort-key");
+  var sortOrderBySelect = document.querySelector("#sort-order");
+  
+  var sortKey = sortKeySelect.value;
+  var sortOrder = sortOrderBySelect.value;
+  
+  // Handle sorting logic here
+  
+  console.log("Sort By:", sortKey);
+  console.log("Sort Order:", sortOrder);
+});
+
+
 </script>
 
 

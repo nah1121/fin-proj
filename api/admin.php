@@ -67,6 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
             <input class="button" type="submit"
                      name="login" value="Sign In">
+            <h4 class="">Or</h4>
+            <a href="new_acc.php" class="button2">Sign Up</a>
         </div>
     </form>
 

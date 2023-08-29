@@ -11,7 +11,7 @@
     
     <ul class="list-unstyled d-flex flex-row justify-content-around ">
         <li class="mx-3">
-            <a class="" href="#">Home</a>
+            <a class="" href="index.php">Home</a>
         </li>
         <li class="mx-3">
             <a class="" href="#">About Us</a>
