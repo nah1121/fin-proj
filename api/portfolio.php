@@ -217,14 +217,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+
 document.querySelectorAll(".custom-select").forEach(function (select) {
   var classes = select.getAttribute("class"),
     id = select.getAttribute("id"),
     name = select.getAttribute("name");
   var template = '<div class="' + classes + '">';
+  var placeholder = select.getAttribute("placeholder");
+  var defaultOption = select.querySelector("option:first-of-type"); // Get the first option
+
+  var defaultOptionText = defaultOption ? defaultOption.textContent : ""; // Get the text content of the first option
+
   template +=
     '<span class="custom-select-trigger">' +
-    select.getAttribute("placeholder") +
+    (placeholder ? placeholder : defaultOptionText) + // Use the placeholder if available, else use the first option text
     "</span>";
   template += '<div class="custom-options">';
   select.querySelectorAll("option").forEach(function (option) {
@@ -245,43 +252,35 @@ document.querySelectorAll(".custom-select").forEach(function (select) {
   wrapper.appendChild(select);
   wrapper.insertAdjacentHTML("afterend", template);
   select.style.display = "none";
+});
 
-  var options = wrapper.querySelectorAll(".custom-option");
-  options.forEach(function (option) {
-    option.addEventListener("click", function () {
-      var select = wrapper.querySelector("select");
-      select.value = this.getAttribute("data-value");
+document.querySelectorAll(".custom-option").forEach(function (option) {
+  option.addEventListener("click", function () {
+    var wrapper = this.closest(".custom-select-wrapper");
+    var select = wrapper.querySelector("select");
+    select.value = this.getAttribute("data-value");
 
-      options.forEach(function (otherOption) {
-        otherOption.classList.remove("selection");
-      });
-      this.classList.add("selection");
-
-      var customOptions = wrapper.querySelector(".custom-options");
-      if (customOptions) {
-        customOptions.classList.remove("option-hover");
-      }
-
-      var customSelect = wrapper.querySelector(".custom-select");
-      if (customSelect) {
-        customSelect.classList.remove("opened");
-      }
-
-      var customTrigger = wrapper.querySelector(".custom-select-trigger");
-      if (customTrigger) {
-        customTrigger.textContent = this.textContent;
-      }
+    var options = wrapper.querySelectorAll(".custom-option");
+    options.forEach(function (otherOption) {
+      otherOption.classList.remove("selection");
     });
-  });
+    this.classList.add("selection");
 
-  var firstOption = wrapper.querySelector(".custom-option:first-of-type");
-  if (firstOption) {
-    firstOption.classList.add("selection");
+    var customOptions = wrapper.querySelector(".custom-options");
+    if (customOptions) {
+      customOptions.classList.remove("option-hover");
+    }
+    
+    var customSelect = wrapper.querySelector(".custom-select");
+    if (customSelect) {
+      customSelect.classList.remove("opened");
+    }
+    
     var customTrigger = wrapper.querySelector(".custom-select-trigger");
     if (customTrigger) {
-      customTrigger.textContent = firstOption.textContent;
+      customTrigger.textContent = this.textContent;
     }
-  }
+  });
 });
 
 document.querySelectorAll(".custom-option:first-of-type").forEach(function (option) {
@@ -333,7 +332,6 @@ document.querySelector("#sort-button").addEventListener("click", function () {
   console.log("Sort By:", sortKey);
   console.log("Sort Order:", sortOrder);
 });
-
 
 </script>
 

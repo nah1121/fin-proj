@@ -673,7 +673,6 @@ body:has(.switch__input:checked) #sort-order{
 }
 
 body:has(.switch__input:checked) #sort-button{
-  background-color: var(--s-black);
   color: var(--s-white) ;
 }
 
@@ -1027,9 +1026,10 @@ body:has(.switch__input:checked) .map-hol iframe{
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-image 0.5s ease-in-out;
 }
 .cont_us1 input[type=submit]:hover {
-  background: var(--g-gold);
+  background-image: var(--g-gold);
 }
 
 
@@ -1037,8 +1037,14 @@ body:has(.switch__input:checked) .map-hol iframe{
 
 
 section {
-  font: 13px/1.5 "Roboto", sans-serif;
+  font: 17px/1.5 "Roboto", sans-serif;
   padding: 50px;
+  padding-bottom: 20px;
+}
+
+.sort-opt1{
+  margin-right: 50px;
+  max-width: 200px;
 }
 
 /* INPUT SELECT OPTION */
@@ -1189,7 +1195,7 @@ select {
 
 .sorting-options {
   display: flex;
-  align-items: center;
+  align-items: end;
   margin-bottom: 20px;
 }
 
