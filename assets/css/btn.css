@@ -19,7 +19,6 @@
     border: none;
     background-color: transparent;
     position: relative;
-    /* overflow: hidden; */
     border-radius: 7px;
     cursor: pointer;
 }
@@ -70,7 +69,7 @@
 }
 
 .btn1:hover {
-  b ackground-color: transparent;
+  background-color: transparent;
 }
 
 .btn1:hover .instagram {
@@ -146,7 +145,7 @@
     visibility: hidden;
     width: 6em;
     height: 8em;
-    background-color: whitesmoke;
+    background-color: #0dacf4;
     color: black;
     text-align: center;
     border-radius: 10px;
@@ -162,6 +161,7 @@
     width: 4em;
     height: 4em;
     background-color: white;
+    border-radius: 10px;
 }
 
 .btn2 .tooltiptext2 .account {
@@ -243,7 +243,7 @@
     visibility: hidden;
     width: 6em;
     height: 8em;
-    background-color: whitesmoke;
+    background-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
     text-align: center;
     border-radius: 10px;
@@ -258,7 +258,8 @@
 .btn3 .tooltiptext3 .cds {
     width: 4em;
     height: 4em;
-    background-color: white;
+    background-color: #8f8f8f;
+    border-radius: 10px;
 }
 
 .btn3 .tooltiptext3 .account {
@@ -321,120 +322,105 @@
 .btn3:hover .svgContainer {
     background-color: rgba(156, 156, 156, 0.466);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 .btn4 {
-      outline: none;
-      transition: .4s all;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      background-color: transparent;
-      position: relative;
-      /* overflow: hidden; */
-      border-radius: 7px;
-      cursor: pointer;
+    outline: none;
+    transition: .4s all;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
 }
-  
-  .btn4 .twitter {
-      margin-top: .25em;
-      margin-left: .1em;
-      fill: #ffffff;
-  }
-  
-  .btn4 .tooltiptext4 {
-      visibility: hidden;
-      width: 6em;
-      height: 8em;
-      background-color: whitesmoke;
-      color: black;
-      text-align: center;
-      border-radius: 10px;
-      padding: 1em;
-      position: absolute;
-      left: -1.5em;
-      top: -8em;
-      z-index: 1;
-      transition: .1s ease-in-out;
-  }
-  
-  .btn4 .tooltiptext4 .cds {
-      width: 4em;
-      height: 4em;
-      background-color: white;
-  }
-  
-  .btn4 .tooltiptext4 .account {
+
+.btn4 .twitter {
+    margin-top: .25em;
+    margin-left: .1em;
+    fill: #ffffff;
+}
+
+.btn4 .tooltiptext4 {
+    visibility: hidden;
+    width: 6em;
+    height: 8em;
+    background-color: #78d5ff;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1em;
+    position: absolute;
+    left: -1.5em;
+    top: -8em;
+    z-index: 1;
+    transition: .1s ease-in-out;
+}
+
+.btn4 .tooltiptext4 .cds {
+    width: 4em;
+    height: 4em;
+    background-color: #00b0ff;
+    border-radius: 10px;
+}
+
+.btn4 .tooltiptext4 .account {
     margin-top: 1em;
-  }
-  
-  .btn4 .tooltiptext4 .username {
-      font-size: 0.6em;
-      margin-top: 1.6em;
-      font-weight: bold;
-  }
-  
-  .btn4:hover .tooltiptext4 {
-      transform: translateY(-1em);
-      visibility: visible;
-  }
-  
- 
-  .btn4:hover .twitter {
+}
+
+.btn4 .tooltiptext4 .username {
+    font-size: 0.6em;
+    margin-top: 1.6em;
+    font-weight: bold;
+}
+
+.btn4:hover .tooltiptext4 {
+    transform: translateY(-1em);
+    visibility: visible;
+}
+
+
+.btn4:hover .twitter {
     fill: white;
-  }
-  
-  .svgContainer {
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      letter-spacing: 0.8px;
-      border-radius: 10px;
-      transition: all .3s;
-      border: 1px solid rgba(156, 156, 156, 0.466);
-  }
-  
-  .BG4 {
-      display: flex;
-      position: absolute;
-      padding: 0;
-      width: 45px;
-      height: 45px;
-      background: #03A9F4;
-      z-index: -1;
-      border-radius: 9px;
-      pointer-events: none;
-      transition: all .3s;
-  }
-  
-  .btn4:hover .BG4 {
-      transform: rotate(35deg);
-      transform-origin: bottom;
-  }
-  
-  .btn4:hover .svgContainer {
+}
+
+.svgContainer {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    letter-spacing: 0.8px;
+    border-radius: 10px;
+    transition: all .3s;
+    border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG4 {
+    display: flex;
+    position: absolute;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    background: #03A9F4;
+    z-index: -1;
+    border-radius: 9px;
+    pointer-events: none;
+    transition: all .3s;
+}
+
+.btn4:hover .BG4 {
+    transform: rotate(35deg);
+    transform-origin: bottom;
+}
+
+.btn4:hover .svgContainer {
     background-color: rgba(156, 156, 156, 0.466);
-  }
-  
+}
