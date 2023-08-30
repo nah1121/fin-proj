@@ -3,55 +3,55 @@
   "builds": [
     {
       "src": "api/index.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {
       "src": "api/admin.php",
-      "use": "@vercel/php"   
+      "use": "vercel/php@0.6.0"   
     },
     {
       "src": "api/body.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {
       "src": "api/faq.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     }, 
     {
       "src": "api/footer.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {  
       "src": "api/head.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {
       "src": "api/nav.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {
       "src": "api/new_acc.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {
       "src": "api/portfolio.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {
       "src": "api/scr.php",
-      "use": "@vercel/php" 
+      "use": "vercel/php@0.6.0" 
     },
     {
       "src": "api/social.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {
       "src": "api/val.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     },
     {  
       "src": "api/views.php",
-      "use": "@vercel/php"
+      "use": "vercel/php@0.6.0"
     }
   ],
 
