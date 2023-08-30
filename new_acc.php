@@ -89,8 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             
             <div class="textbox">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <input type="text" placeholder="Email"
+            <i class="fa fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Email"
             name="el" value="" required>
             </div>
  
