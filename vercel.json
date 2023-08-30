@@ -71,7 +71,7 @@
     {
       "src": "/api/assets/css/(.*)", 
       "dest": "/api/assets/css/styles.css"
-    }
+    },
     {
       "src": "/api/assets/css/(.*)", 
       "dest": "/api/assets/css/btn.css"
