@@ -1,11 +1,80 @@
 {
-    "functions": {
-      "api/*.php": {
-        "runtime": "vercel-php@0.6.0"
-      }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.php",
+      "use": "@vercel/php"
     },
-    "routes": [
-      { "src": "/api/assets/css/style.css", "dest": "/api/assets/css/style.css" },
-      { "src": "/api/assets/js/script.js", "dest": "/api/assets/js/script.js" }]
-  }
+    {
+      "src": "api/admin.php",
+      "use": "@vercel/php"   
+    },
+    {
+      "src": "api/body.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "api/faq.php",
+      "use": "@vercel/php"
+    }, 
+    {
+      "src": "api/footer.php",
+      "use": "@vercel/php"
+    },
+    {  
+      "src": "api/head.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "api/nav.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "api/new_acc.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "api/portfolio.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "api/scr.php",
+      "use": "@vercel/php" 
+    },
+    {
+      "src": "api/social.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "api/val.php",
+      "use": "@vercel/php"
+    },
+    {  
+      "src": "api/views.php",
+      "use": "@vercel/php"
+    }
+  ],
+
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/api/assets/js/(.*)",
+      "dest": "/api/assets/js/script.js"
+    },
+    {
+      "src": "/api/assets/js/(.*)",
+      "dest": "/api/assets/js/dscript.js"
+    },
+    {
+      "src": "/api/assets/css/(.*)", 
+      "dest": "/api/assets/css/styles.css"
+    }
+    {
+      "src": "/api/assets/css/(.*)", 
+      "dest": "/api/assets/css/btn.css"
+    }
+  ] 
+}
