@@ -202,7 +202,7 @@
                         $j = 1 + $j;
 
                         if ($j % 2 == 0) {
-                            $ho = 'flex-row-reverse';
+                            $ho = 'flex-lg-row-reverse';
                             $ho1 = 'text-align: right; margin-right: 25px;';
                         } else {
                             $ho = 'flex-row';
@@ -214,7 +214,7 @@
                         echo "
                     
                     <div class='teams d-flex " . $ho . "'>
-                        <img src='https://via.placeholder.com/500x500.png?text=person' alt='" . $id . "' width='200px'>
+                        <img class='d-md-block d-none' src='https://via.placeholder.com/500x500.png?text=person' alt='" . $id . "' width='200px'>
                         <div class='d-flex flex-column' style='" . $ho1 . " max-width: 700px;'><h3>" . $name . "</h3>
                         <h5>" . $obj . "</h5>
                         <p>" . $bio . "</p></div>

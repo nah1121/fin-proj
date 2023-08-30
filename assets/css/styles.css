@@ -286,9 +286,20 @@ body, nav{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   align-content: center;
   margin: 20px auto;
+}
+
+@media (max-width: 600px){
+  .proj-cont{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 600px){
+  .proj{
+    width: 18rem;
+  }
 }
 
 .contp{
